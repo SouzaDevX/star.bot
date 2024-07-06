@@ -234,25 +234,3 @@ a.link i {
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
 }
-
-/* Media Query para dispositivos móveis */
-@media only screen and (max-width: 768px) {
-  html {
-    font-size: 40px; /* Ajuste o tamanho da fonte conforme necessário */
-  }
-
-  .container {
-    max-width: 100%;
-    padding: 10px;
-  }
-
-  .profile {
-    width: 100px;
-    height: 100px;
-  }
-
-  .modal-content {
-    margin: 10% auto;
-    width: 90%;
-  }
-}
