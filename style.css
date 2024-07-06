@@ -24,7 +24,7 @@
 }
 
 html {
-  height: 100vh;
+  height: 100%;
   font-size: 14px;
   background: var(--background-gradient);
   color: var(--text-color);
@@ -127,7 +127,6 @@ header {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
   animation: fadeIn var(--transition-speed) ease-in-out;
-  transition: 1s;
 }
 
 .Aceita {
@@ -234,13 +233,24 @@ a.link i {
   transition: opacity 0.2s ease-in-out;
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
+/* Media Query para dispositivos móveis */
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 12px;
   }
-  to {
-    transform: translateY(0);
-    opacity: 1;
+
+  .container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .profile {
+    width: 100px;
+    height: 100px;
+  }
+
+  .modal-content {
+    margin: 10% auto;
+    width: 90%;
   }
 }
