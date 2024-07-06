@@ -25,10 +25,18 @@
 
 html {
   height: 100%;
-  font-size: 16px; /* Ajustei para uma base mais comum */
+  font-size: 14px;
   background: var(--background-gradient);
   color: var(--text-color);
   animation: fadeIn var(--transition-speed) ease-in-out;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.4;
 }
 
 body {
@@ -36,13 +44,53 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  overflow-x: hidden; /* Evita a barra de rolagem horizontal */
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color var(--transition-speed) ease-in-out;
+}
+
+.desc {
+  margin-top: 1px;
+  color: #aaa;
+  font-family: var(--font-primary);
+  animation: slideUp 2s ease-in-out;
+}
+
+.title {
+  color: black;
+  margin-bottom: 10px;
+}
+
+.supportModal:hover {
+  animation: slideUp 2s ease-in-out;
+}
+
+.degrade {
+  background: linear-gradient(
+    to right,
+    var(--secondary-color),
+    var(--primary-color)
+  );
 }
 
 .container {
-  max-width: 100%;
+  height: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
+  justify-content: center;
   text-align: center;
+}
+
+header {
+  margin-bottom: 40px;
+  animation: slideUp 1s ease-in-out;
 }
 
 .profile {
@@ -54,11 +102,18 @@ body {
   margin-bottom: 10px;
   box-shadow: 0 0 0 1.5px var(--text-color);
   transition: border var(--transition-speed) ease;
+  animation: slideUp 1s ease-in-out 0.2s backwards;
 }
 
 .profile:hover {
   box-shadow: 0 0 0 1px var(--text-color);
   border: 2px solid var(--text-color);
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .modal {
@@ -74,15 +129,37 @@ body {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn var(--transition-speed) ease-in-out;
+}
+
+.Aceita {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 5px 20px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease-in-out,
+    transform var(--transition-speed) ease-in-out;
+  margin-bottom: 10px;
+}
+
+.Aceita:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
 }
 
 .modal-content {
   background-color: #ffffff;
   margin: 15% auto;
   padding: 20px;
-  max-width: 80%;
+  width: 80%;
+  max-width: 400px;
   text-align: center;
+  position: relative;
   border-radius: 8px;
+  animation: slideUp 0.5s ease-in-out;
 }
 
 .close {
@@ -105,7 +182,7 @@ body {
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    transform: translateY(0px);
     opacity: 1;
   }
 }
@@ -115,6 +192,7 @@ h1 {
   margin-bottom: 10px;
   color: var(--text-color);
   font-weight: 300;
+  transition: color var(--transition-speed) ease-in-out;
   animation: slideUp 1s ease-in-out 0.4s backwards;
 }
 
@@ -130,7 +208,7 @@ a.link button {
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border: none;
   border-radius: 10px;
   font-size: 1.2em;
@@ -159,15 +237,15 @@ a.link i {
 
 @media (max-width: 768px) {
   html {
-    font-size: 14px; /* Reduz a fonte para dispositivos menores */
+    font-size: 14px;
   }
 
   .container {
-    padding: 10px; /* Reduz o padding do container */
+    padding: 10px;
   }
 
   .modal-content {
     width: 90%;
-    max-width: 300px; /* Ajusta o tamanho máximo do modal */
+    max-width: 300px;
   }
 }
