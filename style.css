@@ -236,9 +236,15 @@ a.link i {
 }
 
 @media (max-width: 600px) {
-  .profile {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 5px;
+  * {
+    font-size: 17px;
+  }
+
+  body {
+    margin-bottom: 10px;
+  }
+
+  .container {
+    padding: 5px; /* Reduz o padding do container */
   }
 }
