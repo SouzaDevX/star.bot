@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+
+:root {
+  --primary-color: hsl(192, 100%, 50%);
+  --secondary-color: hsl(230, 100%, 50%);
+  --background-color: hsl(0, 0%, 0%);
+  --background-gradient: linear-gradient(
+    to top,
+    hsl(0, 0%, 0%),
+    hsl(0, 0%, 19%)
+  );
+  --text-color: #ffffff;
+  --font-primary: "Merriweather", serif;
+  --font-secondary: "Outfit", sans-serif;
+  --transition-speed: 0.5s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-secondary);
+}
+
+html {
+  height: 100vh;
+  font-size: 14px;
+  background: var(--background-gradient);
+  color: var(--text-color);
+  animation: fadeIn var(--transition-speed) ease-in-out;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color var(--transition-speed) ease-in-out;
+}
+
+p {
+  animation: slideUp 2s ease-in-out;
+}
+
+.degrade {
+  background: linear-gradient(
+    to right,
+    var(--secondary-color),
+    var(--primary-color)
+  );
+}
+
+.container {
+  height: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  text-align: center;
+}
+
+header {
+  margin-bottom: 40px;
+  animation: slideUp 1s ease-in-out;
+}
+
+.profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid transparent;
+  margin-bottom: 10px;
+  box-shadow: 0 0 0 1.5px var(--text-color);
+  transition: border var(--transition-speed) ease;
+  animation: slideUp 1s ease-in-out 0.2s backwards;
+}
+
+.profile:hover {
+  box-shadow: 0 0 0 1px var(--text-color);
+  border: 2px solid var(--text-color);
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  font-family: var(--font-primary);
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: var(--text-color);
+  font-weight: 300;
+  transition: color var(--transition-speed) ease-in-out;
+  animation: slideUp 1s ease-in-out 0.4s backwards;
+}
+
+section.link_buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: slideUp 1s ease-in-out 0.6s backwards;
+}
+
+a.link button {
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-speed) ease-in-out,
+    transform var(--transition-speed) ease-in-out;
+}
+
+a.link button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+a.link button:hover i {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+a.link i {
+  font-size: 1.5em;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
