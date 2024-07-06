@@ -15,25 +15,29 @@
     <div id="particles-js"></div>
     <div class="container">
       <header>
-        <img src="th.jpg" , class="profile" />
-        <h1>@star.bot</h1>
-        <p>Sou uma assistente virtual pronta para te ajudar! :D</p>
+        <img src="th.jpg" class="profile" />
+        <h1>StarBot 💫</h1>
+        <p class="desc">Sou uma assistente virtual pronta para te ajudar! :D</p>
       </header>
 
       <section class="link_buttons">
-        <a href="#" target="_blank" class="link">
+        <a
+          href="https://chat.whatsapp.com/LigrKr7Oitb8Kpfam2Qg8s"
+          target="_blank"
+          class="link"
+        >
           <button class="degrade">
             <span>Grupo Whatsapp</span>
             <i class="bi bi-whatsapp"></i>
           </button>
         </a>
-        <a href="#" target="_blank" class="link">
+        <a onclick="openModal('Contratar o Bot')" class="link">
           <button class="degrade">
             <span>Contratar o Bot</span>
             <i class="bi bi-currency-dollar"></i>
           </button>
         </a>
-        <a href="#" target="_blank" class="link">
+        <a onclick="openModal('Conversar com suporte')" class="link">
           <button class="degrade">
             <span>Conversar com suporte</span>
             <i class="bi bi-chat-dots"></i>
@@ -41,7 +45,51 @@
         </a>
       </section>
     </div>
+    <!-- Modal -->
+    <div id="supportModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p class="title" id="modalText">
+          Você deseja realmente iniciar o chat?
+        </p>
+        <button class="Aceita" onclick="startSupportChat()">Sim</button>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="particles-config.js"></script>
+    <script>
+      // Open the modal
+      function openModal(action) {
+        var modalText = document.getElementById("modalText");
+        if (action === "Contratar o Bot") {
+          modalText.textContent =
+            "Você deseja realmente iniciar o chat com o suporte para contratar o bot para seu grupo?";
+        } else if (action === "Conversar com suporte") {
+          modalText.textContent =
+            "Você deseja realmente iniciar o chat com o suporte?";
+        }
+        document.getElementById("supportModal").style.display = "flex";
+      }
+
+      // Close the modal
+      function closeModal() {
+        document.getElementById("supportModal").style.display = "none";
+      }
+
+      // Function to start the support chat (you can implement this according to your needs)
+      function startSupportChat() {
+        var action = document.getElementById("modalText").textContent;
+        var whatsappLink = "http://wa.me/5598991781819?text=";
+        var message = "";
+
+        if (action.includes("contratar")) {
+          message = "Olá, gostaria de contratar a StarBot!";
+        } else if (action.includes("suporte")) {
+          message = "Olá, preciso de ajuda com a StarBot!";
+        }
+
+        window.location.href = whatsappLink + encodeURIComponent(message);
+      }
+    </script>
   </body>
 </html>
