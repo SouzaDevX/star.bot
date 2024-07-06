@@ -182,7 +182,7 @@ header {
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    transform: translateY(0px);
     opacity: 1;
   }
 }
@@ -233,4 +233,12 @@ a.link i {
   font-size: 1.5em;
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
+}
+
+@media (max-width: 600px) {
+  .profile {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 5px;
+  }
 }
